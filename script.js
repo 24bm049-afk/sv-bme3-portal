@@ -16,8 +16,8 @@ if (window.location.pathname.includes("home.html")) {
 const loginForm = document.getElementById("login-form");
 const errorMessage = document.getElementById("error-message");
 
-const validID = "S10234";
-const validPassword = "planner123";
+const validID = "24BM049";
+const validPassword = "ietian49";
 
 if (loginForm) {
   loginForm.addEventListener("submit", function (event) {
@@ -49,9 +49,27 @@ if (logoutBtn) {
     window.location.href = "index.html";
   });
 }
+
+// ============================
+// PERSONALIZED WELCOME (runs on home.html)
+// ============================
+
 const welcomeText = document.getElementById("welcome-text");
 
 if (welcomeText) {
   const studentID = localStorage.getItem("studentID");
-  welcomeText.textContent = "Logged in as: " + studentID;
+  welcomeText.textContent = "Student ID: " + studentID;
+}
+
+// ============================
+// FORGOT PASSWORD (runs on index.html)
+// ============================
+
+const forgotLink = document.getElementById("forgot-link");
+
+if (forgotLink) {
+  forgotLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    alert("To reset your password, please contact your class teacher or the admin office.");
+  });
 }
